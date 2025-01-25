@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from django.http import HttpResponse
 urlpatterns = [
     path('admin/', admin.site.urls),
     # index url to return hello world
     path('', lambda request: HttpResponse('Hello World')),
 
 
-
 ]
+
+# https://www.pythonanywhere.com/user/UtilityToolBox/consoles/37782876/
