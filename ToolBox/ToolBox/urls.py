@@ -20,5 +20,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # index url to return hello world
     path('', lambda request: HttpResponse('Hello World')),
-
 ]
