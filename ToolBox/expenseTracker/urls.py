@@ -11,4 +11,6 @@ urlpatterns = [
     # path('delete/<int:id>/', views.delete_expense, name='delete_expense'),
         path('api-overview/', views.apiOverview, name="api-overview"),
     path('add-expense/', views.createExpense, name="add-expense"),
+    path('expenses/<int:user_id>/', views.UserExpenseView.as_view(), name='user-expenses'),
+
 ]

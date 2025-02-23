@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
+from django.views import View
+from django.http import JsonResponse
 from .models import Expense, ExpenseCategory
 # Create your views here.
 
@@ -42,4 +43,16 @@ def createExpense(request):
 # }
 
 
-
+class UserExpenseView(View):
+    def get(self, request, user_id):
+        expenses = Expense.objects.filter(user_id=user_id)
+        expense_data = list(expenses.values())
+        return JsonResponse({'expenses': expense_data})
+    # def post(self, request, user_id):
+    #     serializer = ExpenseSerializer(data=request.data)
+    #     if serializer.is_valid():
+    #         serializer.save()   
+    #     else:
+    #         return Response(serializer.errors, status=400)
+    #     return Response(serializer.data)
+            
