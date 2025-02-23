@@ -29,7 +29,8 @@ ALLOWED_HOSTS = ['UtilityToolBox.pythonanywhere.com', '127.0.0.1']
 
 
 # Application definition
-
+# Application definition
+CORS_ORIGIN_ALLOW_ALL=True
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'corsheaders',
+    'expenseTracker',
 ]
 
 MIDDLEWARE = [
@@ -50,7 +54,15 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'ToolBox.urls'
+CORS_ORIGIN_ALLOW_ALL = True    
+REST_FRAMEWORK = {
+    'DEFAULT_PARSER_CLASSES': (
+                'rest_framework.parsers.JSONParser',           # Ensure JSON support
 
+        'rest_framework.parsers.FormParser',
+        'rest_framework.parsers.MultiPartParser'
+     )
+ }
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

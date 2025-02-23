@@ -5,8 +5,10 @@ from django.http import HttpResponse
 urlpatterns = [
 
     path('', lambda request: HttpResponse('Hello World from the app')),
-    path("show-all", views.getAllExpenses, name="show_all")
+    path("show-all", views.getAllExpenses, name="show_all"),
     # path('add/', views.add_expense, name='add_expense'),
     # path('edit/<int:id>/', views.edit_expense, name='edit_expense'),
     # path('delete/<int:id>/', views.delete_expense, name='delete_expense'),
+        path('api-overview/', views.apiOverview, name="api-overview"),
+    path('add-expense/', views.createExpense, name="add-expense"),
 ]

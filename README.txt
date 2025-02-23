@@ -3,3 +3,9 @@
 See https://help.pythonanywhere.com/ (or click the "Help" link at the top
 right) for help on how to use PythonAnywhere, including tips on copying and
 pasting from consoles, and writing your own web applications.
+
+
+Activate Virtual env
+cd ToolBox
+source env/bin/activate 
+
